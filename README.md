@@ -108,31 +108,45 @@ git init
 
 git add .
 
+
 git commit -m "Initial commit"
+
 
 git remote add origin https://github.com/your-username/kayalvizhi-portfolio.git
 
+
 git push -u origin main
+
 
 3. Deploy with Vercel
 Go to vercel.com
 
+
 Sign up or log in with GitHub
+
+
 
 Click New Project
 
+
 Import your GitHub repository
+
+
 
 Vercel auto-detects Next.js
 
+
 Click Deploy
+
 
 Your portfolio will be live in minutes with a free Vercel domain (e.g., your-repo.vercel.app). You can later add a custom domain in your Vercel project settings.
 
 ### Acknowledgements
 Built with ❤️ by Kayalvizhi P
 
+
 Inspired by clean design principles and real-world developer portfolios
+
 
 Powered by open-source tools and frameworks
 
@@ -141,6 +155,8 @@ If you find this portfolio helpful:
 
 Star the repository ⭐
 
+
 Share it with fellow developers
+
 
 Fork and customize it for your own use
