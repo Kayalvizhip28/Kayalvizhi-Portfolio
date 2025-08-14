@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   FaEnvelope,
   FaPhoneAlt,
@@ -10,6 +10,54 @@ import {
 } from 'react-icons/fa';
 
 export const ContactSection = () => {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+    botField: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+  };
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setErrorMsg('');
+
+    try {
+      console.log('Sending form:', form); // ✅ Debug log
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+      console.log('Response:', data); // ✅ Debug log
+
+      if (res.ok && data.ok) {
+        setStatus('success');
+        setForm({ name: '', email: '', subject: '', message: '', botField: '' });
+      } else {
+        setErrorMsg(data.error || 'Something went wrong.');
+        setStatus('error');
+      }
+    } catch (err) {
+      console.error('Network error:', err);
+      setErrorMsg('Network error. Please try again.');
+      setStatus('error');
+    }
+  };
+
   return (
     <section id="contact" className="bg-white scroll-mt-20">
       <div className="max-w-6xl mx-auto pt-12 sm:pt-20 px-4">
@@ -79,33 +127,77 @@ export const ContactSection = () => {
 
           {/* Message Form Card */}
           <div className="bg-white rounded-xl shadow-md px-6 py-8 flex flex-col justify-start w-full md:w-[320px] min-h-[400px]">
-            <form className="space-y-5">
+            <form className="space-y-5" onSubmit={onSubmit}>
+              {/* Hidden honeypot (bots fill this, humans don't) */}
               <input
                 type="text"
+                name="botField"
+                value={form.botField}
+                onChange={handleChange}
+                className="hidden"
+                autoComplete="off"
+                tabIndex={-1}
+              />
+
+              <input
+                type="text"
+                name="name"
                 placeholder="Name"
+                value={form.name}
+                onChange={handleChange}
+                required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email"
+                value={form.email}
+                onChange={handleChange}
+                required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               />
               <input
                 type="text"
-                placeholder="Subject"
+                name="subject"
+                placeholder="Subject (optional)"
+                value={form.subject}
+                onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               />
               <textarea
+                name="message"
                 rows={4}
                 placeholder="Message"
+                value={form.message}
+                onChange={handleChange}
+                required
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
               />
+
               <button
                 type="submit"
-                className="w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg font-medium hover:opacity-90 transition-opacity text-sm"
+                disabled={status === 'loading'}
+                className={`w-full px-6 py-2 rounded-lg font-medium text-sm transition-opacity text-white ${
+                  status === 'loading'
+                    ? 'bg-blue-400 cursor-not-allowed'
+                    : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90'
+                }`}
               >
-                Send Message
+                {status === 'loading' ? 'Sending…' : 'Send Message'}
               </button>
+
+              {/* Messages */}
+              {status === 'success' && (
+                <p className="text-green-600 text-sm text-center">
+                  ✅ Thanks! Your message has been sent.
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-600 text-sm text-center">
+                  ❌ {errorMsg || 'Something went wrong. Please try again.'}
+                </p>
+              )}
             </form>
           </div>
         </div>
@@ -152,3 +244,4 @@ export const ContactSection = () => {
     </section>
   );
 };
+

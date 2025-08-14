@@ -22,7 +22,7 @@ A modern, responsive portfolio built with **Next.js**, **React.js**, **TypeScrip
 ### 1. Clone the Repository
 
          git clone https://github.com/your-username/kayalvizhi-portfolio.git
-
+         
          cd kayalvizhi-portfolio
 
 ### 2. Install Dependencies
