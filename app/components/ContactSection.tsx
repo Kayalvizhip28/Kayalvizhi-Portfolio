@@ -85,7 +85,7 @@ export const ContactSection = () => {
                 </div>
                 <a
                   href="mailto:kayalp2001@gmail.com"
-                  className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                  className="text-gray-700 hover:text-blue-600 transition-colors text-base"
                 >
                   kayalp2001@gmail.com
                 </a>
@@ -94,7 +94,7 @@ export const ContactSection = () => {
                 <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
                   <FaMapMarkerAlt className="w-4 h-4" />
                 </div>
-                <span className="text-gray-700 text-sm">
+                <span className="text-gray-700 text-base">
                   Chennai, Tamil Nadu, India
                 </span>
               </li>
@@ -104,7 +104,7 @@ export const ContactSection = () => {
                 </div>
                 <a
                   href="tel:+916374855981"
-                  className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                  className="text-gray-700 hover:text-blue-600 transition-colors text-base"
                 >
                   +91 6374855981
                 </a>
@@ -117,7 +117,7 @@ export const ContactSection = () => {
                   href="https://www.linkedin.com/in/kayalvizhip28"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                  className="text-gray-700 hover:text-blue-600 transition-colors text-base"
                 >
                   LinkedIn Profile
                 </a>
@@ -146,7 +146,7 @@ export const ContactSection = () => {
                 value={form.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
               />
               <input
                 type="email"
@@ -155,7 +155,7 @@ export const ContactSection = () => {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
               />
               <input
                 type="text"
@@ -163,7 +163,7 @@ export const ContactSection = () => {
                 placeholder="Subject (optional)"
                 value={form.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
               />
               <textarea
                 name="message"
@@ -172,13 +172,13 @@ export const ContactSection = () => {
                 value={form.message}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-base"
               />
 
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className={`w-full px-6 py-2 rounded-lg font-medium text-sm transition-opacity text-white ${
+                className={`w-full px-6 py-2 rounded-lg font-medium text-base transition-opacity text-white ${
                   status === 'loading'
                     ? 'bg-blue-400 cursor-not-allowed'
                     : 'bg-gradient-to-r from-blue-500 to-purple-500 hover:opacity-90'
@@ -206,7 +206,7 @@ export const ContactSection = () => {
       {/* Footer */}
       <footer className="bg-black text-white w-full mt-16">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4 py-8">
-          <p className="text-base text-white sm:text-left w-full sm:w-auto mb-4 sm:mb-0">
+          <p className="text-lg text-white sm:text-left w-full sm:w-auto mb-4 sm:mb-0">
             © 2025 Kayalvizhi P. All rights reserved.
           </p>
           <div className="flex gap-6 sm:gap-8">

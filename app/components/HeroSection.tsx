@@ -156,7 +156,7 @@ export const HeroSection = () => {
             </a>
 
             <a
-              href="https://drive.google.com/file/d/1BEAA-byAJlW6hjf_ElHviuMgn1CMxRCm/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1J2Qf8h27pXrGzYOV950cPcr60Y36PbV3/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center"
