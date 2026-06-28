@@ -204,7 +204,7 @@ export const HeroSection = () => {
 
         {/* Extended Intro Paragraph */}
         <p className="text-lg text-gray-700 leading-relaxed mb-10 text-left">
-          I am a Web Developer with 1 year of internship experience in user experience, user interface,
+          I am a Web Developer with 6 months of internship experience in user experience, user interface,
           and scalable application development. I specialize in API integration, full-stack development,
           and building robust, high-performance applications that deliver seamless digital experiences.
         </p>
