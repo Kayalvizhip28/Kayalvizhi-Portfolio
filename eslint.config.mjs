@@ -17,7 +17,6 @@ export default [
     "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier"
+    "plugin:jsx-a11y/recommended"
   ),
 ];
