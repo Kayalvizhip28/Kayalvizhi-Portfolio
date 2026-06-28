@@ -13,10 +13,5 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends(
-    "next/core-web-vitals",
-    "plugin:react/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:jsx-a11y/recommended"
-  ),
+  ...compat.extends("next/core-web-vitals"),
 ];
