@@ -199,7 +199,7 @@ export const HeroSection = () => {
 
         {/* Light Blue Heading */}
         <h3 className="text-xl sm:text-2xl font-bold bg-blue-100 text-gray-900 px-4 py-2 rounded-md inline-block mb-4">
-          Hello, I'm Kayalvizhi P — Web Developer
+         Hello, I&apos;m Kayalvizhi P — Web Developer
         </h3>
 
         {/* Extended Intro Paragraph */}
