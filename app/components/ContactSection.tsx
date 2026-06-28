@@ -67,7 +67,7 @@ export const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-gray-600 text-lg sm:text-xl">
-            Let’s connect and discuss opportunities
+           Let&apos;s connect and discuss opportunities
           </p>
         </div>
 
