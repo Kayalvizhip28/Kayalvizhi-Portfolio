@@ -177,7 +177,7 @@ export const SkillsSection = () => {
               </h3>
             </div>
             <p className="text-base text-gray-700 mb-4">
-              <strong>CorestratAI Solutions Private Limited</strong> — May 2024 to April 2025
+              <strong>CorestratAI Solutions Private Limited</strong> — June 2024 to November 2024
             </p>
             <ul className="list-disc list-inside text-base text-gray-700 space-y-2">
               <li>Delivered functional web development projects using Bootstrap, JavaScript, jQuery, Python, and Flask</li>
